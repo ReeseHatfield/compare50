@@ -62,7 +62,8 @@ class Fragment {
 
         const colors = ['#ffd0a8', '#a8e6cf', '#dcedc1', '#ffaaa5', '#b2f7ef'];
         if (!this.group.assignedColor) {
-            this.group.assignedColor = colors[Math.floor(Math.random() * colors.length)];
+            const colorIndex = this.group.id % colors.length;
+            this.group.assignedColor = colors[colorIndex];
         }
 
         this.dom_element.style.setProperty('--group-color', this.group.assignedColor);
