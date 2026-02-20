@@ -83,8 +83,9 @@ pre {
     background-color: var(--group-color, #ffd0a8) !important;
 }
 
-/* darken color for selected match */
 .active_match {
+    cursor: pointer;
+    /* darken color for selected match */
     filter: brightness(0.85);
 }
 /* style code samples */
