@@ -60,6 +60,13 @@ class Fragment {
         this.span = this.spans[0];
         this.group = this.groups[0];
 
+        const colors = ['#ffd0a8', '#a8e6cf', '#dcedc1', '#ffaaa5', '#b2f7ef'];
+        if (!this.group.assignedColor) {
+            this.group.assignedColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        this.dom_element.style.setProperty('--group-color', this.group.assignedColor);
+
         this.matching_fragments = [];
         for (let span_id of GROUP_TO_SPANS[this.group.id]) {
             for (let frag_id of SPAN_TO_FRAGMENTS[span_id]) {

@@ -78,18 +78,16 @@ pre {
     word-break: break-word;
 }
 
-/* highlighted code fragments */
 .match {
-    background-color: #ffd0a8;
+    background-color: var(--group-color, #ffd0a8) !important;
 }
 
+/* .active_match {
+    background-color: #ffaa60 !important;
+} */
 .active_match {
-    /*font-weight: bold;*/
-    background-color: #ffaa60;
-    /*color: white;*/
-    cursor: pointer;
+    filter: brightness(0.85);
 }
-
 /* style code samples */
 .side .submission-file:first-child {
     border-top: none;
