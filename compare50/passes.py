@@ -1,4 +1,5 @@
 import importlib
+import importlib.resources
 import atexit
 from contextlib import ExitStack
 
