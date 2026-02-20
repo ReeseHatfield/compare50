@@ -78,13 +78,12 @@ pre {
     word-break: break-word;
 }
 
+/* highlighted code fragments */
 .match {
     background-color: var(--group-color, #ffd0a8) !important;
 }
 
-/* .active_match {
-    background-color: #ffaa60 !important;
-} */
+/* darken color for selected match */
 .active_match {
     filter: brightness(0.85);
 }
