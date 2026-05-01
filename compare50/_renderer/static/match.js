@@ -374,6 +374,17 @@ function add_click_listeners(fragments) {
     });
 }
 
+function init_anonymizer(){
+    const anon_btns = document.querySelectorAll(".anon-btn");
+
+    anon_btns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            alert('Button was clicked!');
+        });
+    })
+
+}
+
 function select_view(name) {
     if (select_view._cache === undefined) {
         select_view._cache = {};
@@ -428,6 +439,7 @@ function select_view(name) {
     add_mouse_over_listeners(fragments);
     add_click_listeners(fragments);
     init_group_button(groups, CURRENT_VIEW);
+    init_anonymizer()
 
     // Cache this view
     select_view._cache[CURRENT_VIEW] = true;
