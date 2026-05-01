@@ -377,10 +377,21 @@ function add_click_listeners(fragments) {
 function init_anonymizer(){
     const anon_btns = document.querySelectorAll(".anon-btn");
 
+    const name = anon_btns.innerHTML;
+    let isAnonymized = false;
+
     anon_btns.forEach(btn => {
         btn.addEventListener('click', function() {
-            alert('Button was clicked!');
+            isAnonymized = !isAnonymized;
+
+            if (!isAnonymized){
+                btn.nextElementSibling.innerHTML = "Anonymous Student"
+            }
+            else {
+                btn.nextElementSibling.innerHTML = name;
+            }
         });
+
     })
 
 }
