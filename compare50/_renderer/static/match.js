@@ -377,10 +377,13 @@ function add_click_listeners(fragments) {
 function init_anonymizer(){
     const anon_btns = document.querySelectorAll(".anon-btn");
 
-    const name = anon_btns.innerHTML;
     let isAnonymized = false;
-
+    
     anon_btns.forEach(btn => {
+
+        const name = btn.nextElementSibling.textContent;
+        console.log(name);
+        
         btn.addEventListener('click', function() {
             isAnonymized = !isAnonymized;
 
