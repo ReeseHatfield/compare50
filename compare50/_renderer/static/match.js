@@ -396,12 +396,12 @@ function init_anonymizer(){
     let isAnonymized = false;
     
     anon_btns.forEach(btn => {
-
+        btn.innerHTML = eyeOpenSVG;
+        
         const name = btn.nextElementSibling.textContent;
-        console.log(name);
+        // console.log(name);
 
         btn.addEventListener('click', function() {
-            isAnonymized = !isAnonymized;
 
             if (!isAnonymized){
                 btn.innerHTML = eyeClosedSVG;
@@ -411,6 +411,8 @@ function init_anonymizer(){
                 btn.innerHTML = eyeOpenSVG;
                 btn.nextElementSibling.innerHTML = name;
             }
+
+            isAnonymized = !isAnonymized;
         });
 
     })
