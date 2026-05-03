@@ -210,3 +210,10 @@ a.index-link:hover {
     float: left;
 }
 
+.anon-btn {
+    background: transparent;
+    border: none;
+    color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
