@@ -217,3 +217,8 @@ a.index-link:hover {
     padding: 0;
     cursor: pointer;
 }
+
+.match-title > * {
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+}
