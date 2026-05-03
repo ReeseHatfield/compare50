@@ -374,6 +374,50 @@ function add_click_listeners(fragments) {
     });
 }
 
+
+function init_anonymizer(){
+    const anon_btns = document.querySelectorAll(".anon-btn");
+
+    const eyeOpenSVG = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="ffffff">
+    <path d="M3 13C6.6 5 17.4 5 21 13" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M12 17C10.3431 17 9 15.6569 9 14C9 12.3431 10.3431 11 12 11C13.6569 11 15 12.3431 15 14C15 15.6569 13.6569 17 12 17Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>`
+
+    const eyeClosedSVG = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff">
+    <path d="M19.5 16L17.0248 12.6038" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M12 17.5V14" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.5 16L6.96895 12.6124" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 8C6.6 16 17.4 16 21 8" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>    
+    `
+
+    let isAnonymized = false;
+    
+    anon_btns.forEach(btn => {
+        btn.innerHTML = eyeOpenSVG;
+        
+        const name = btn.nextElementSibling.textContent;
+
+        btn.addEventListener('click', function() {
+
+            if (!isAnonymized){
+                btn.innerHTML = eyeClosedSVG;
+                btn.nextElementSibling.innerHTML = "Anonymous Student"
+            }
+            else {
+                btn.innerHTML = eyeOpenSVG;
+                btn.nextElementSibling.innerHTML = name;
+            }
+
+            isAnonymized = !isAnonymized;
+        });
+
+    })
+
+}
+
 function select_view(name) {
     if (select_view._cache === undefined) {
         select_view._cache = {};
@@ -428,6 +472,7 @@ function select_view(name) {
     add_mouse_over_listeners(fragments);
     add_click_listeners(fragments);
     init_group_button(groups, CURRENT_VIEW);
+    init_anonymizer()
 
     // Cache this view
     select_view._cache[CURRENT_VIEW] = true;

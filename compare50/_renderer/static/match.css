@@ -209,3 +209,16 @@ a.index-link:hover {
     height: 100%;
     float: left;
 }
+
+.anon-btn {
+    background: transparent;
+    border: none;
+    color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.match-title > * {
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+}
