@@ -1,6 +1,6 @@
 # compare50
 
-This is an updated and maintained, opinionated fork of Hardvards compare50 tool.
+This is an updated and maintained, opinionated fork of Harvard's compare50 tool.
 Read their documentation [here](https://cs50.readthedocs.io/projects/compare50/en/latest/index.html)
 
 This version features several new features like
